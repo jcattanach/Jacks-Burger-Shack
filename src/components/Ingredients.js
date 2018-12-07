@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
+class Ingredients extends Component {
 
-export class Ingredients extends Component {
-
-  toggleLettuce = () => {
-    console.log('Lettuce')
-  }
   toggleTomato = () => {
     console.log('Tomato')
   }
@@ -20,11 +17,29 @@ export class Ingredients extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.toggleLettuce}>Lettuce</button>
-        <button onClick={this.toggleTomato}>Tomato</button>
-        <button onClick={this.toggleCheese}>Cheese</button>
-        <button onClick={this.togglePickles}>Pickles</button>
+        <button onClick={this.props.toggleLettuce}>Lettuce</button>
+        <button onClick={this.props.toggleTomato}>Tomato</button>
+        <button onClick={this.props.toggleCheese}>Cheese</button>
+        <button onClick={this.props.togglePickles}>Pickles</button>
       </div>
     );
   }
 }
+
+
+// const mapStateToProps = (state) => {
+//   return {
+//
+// }
+// }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleLettuce : () => dispatch({ type : "TOGGLE_LETTUCE"}),
+    toggleTomato : () => dispatch({ type : "TOGGLE_TOMATO"}),
+    toggleCheese : () => dispatch({ type : "TOGGLE_CHEESE"}),
+    togglePickles : () => dispatch({ type : "TOGGLE_PICKLES"})
+
+  }
+}
+export default connect(null, mapDispatchToProps)(Ingredients)
