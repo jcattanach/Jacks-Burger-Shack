@@ -1,0 +1,46 @@
+
+.burgerContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bun {
+  width: 500px;
+  height: 100px;
+  background-color: #B27F54;
+  margin: 10px;
+}
+
+.patty {
+  width: 400px;
+  height: 80px;
+  background-color: #755343;
+  margin: 10px
+}
+
+.cheese {
+  width: 450px;
+  height: 20px;
+  background-color: #e3d54c;
+  margin: 10px;
+}
+.lettuce {
+  width: 450px;
+  height: 20px;
+  background-color: lightgreen;
+  margin: 10px;
+}
+.tomato {
+  width: 400px;
+  height: 40px;
+  background-color: red;
+  margin: 10px;
+}
+.pickle {
+  width: 200px;
+  height: 20px;
+  background-color: green;
+  margin: 10px;
+}
