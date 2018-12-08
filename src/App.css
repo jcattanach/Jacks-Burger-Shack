@@ -1,3 +1,20 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.burgerContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid black;
+  width: 80%;
+  position: relative;
+  height: 80%;
+}
+.ingredientMenu {
+  margin: 20px 0 20px 0;
 }

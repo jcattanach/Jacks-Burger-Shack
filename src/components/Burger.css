@@ -1,46 +1,113 @@
+.top {
+  border-top-left-radius: 27.5px;
+  border-top-right-radius: 27.5px;
+}
 
-.burgerContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.bottom {
+  border-bottom-left-radius: 27.5px;
+  border-bottom-right-radius: 27.5px;
 }
 
 .bun {
-  width: 500px;
-  height: 100px;
-  background-color: #B27F54;
-  margin: 10px;
+  width: 450px;
+  height: 75px;
+  background-color: #cc9966;
+  margin: 5px;
 }
 
 .patty {
   width: 400px;
-  height: 80px;
+  height: 70px;
   background-color: #755343;
-  margin: 10px
+  margin: 5px;
+  border-radius: 25px;
 }
 
 .cheese {
   width: 450px;
   height: 20px;
-  background-color: #e3d54c;
-  margin: 10px;
+  background-color: #FDBB77;
+  margin: 5px;
+  border-radius: 25px;
 }
 .lettuce {
   width: 450px;
   height: 20px;
   background-color: lightgreen;
-  margin: 10px;
+  margin: 5px;
 }
 .tomato {
   width: 400px;
-  height: 40px;
+  height: 30px;
   background-color: red;
-  margin: 10px;
+  margin: 5px;
+  border-radius: 25px;
 }
 .pickle {
   width: 200px;
   height: 20px;
-  background-color: green;
-  margin: 10px;
+  background-color: #7dae6c;
+  margin: 5px;
+  border-radius: 25px;
+}
+.ketchup {
+  width: 450px;
+  height: 20px;
+  background-color: #c33a00;
+  margin-bottom: -10px;
+  border-radius: 25px;
+}
+.mustard {
+  width: 450px;
+  height: 20px;
+  background-color: #e7c536;
+  margin-top: -10px;
+  border-radius: 25px;
+}
+
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .bun {
+    width: 250px;
+    height: 37.5px;
+    margin: 2.5px;
+  }
+
+  .patty {
+    width: 200px;
+    height: 40px;
+    margin: 2.5px;
+  }
+
+  .cheese {
+    width: 250px;
+    height: 10px;
+    margin: 2.5px;
+  }
+  .lettuce {
+    width: 250px;
+    height: 10px;
+    margin: 2.5px;
+  }
+  .tomato {
+    width: 200px;
+    height: 20px;
+    margin: 2.5px;
+  }
+  .pickle {
+    width: 100px;
+    height: 10px;
+    margin: 2.5px;
+  }
+  .ketchup {
+    width: 250px;
+    height: 10px;
+    margin-bottom: -5px;
+  }
+  .mustard {
+    width: 250px;
+    height: 10px;
+  }
+
 }

@@ -1,8 +1,12 @@
 const initialState = {
-  pickles : true,
-  cheese : true,
-  tomato : true,
-  lettuce : true
+  pickles : false,
+  cheese : false,
+  tomato : false,
+  lettuce : false,
+  extraCheese : false,
+  doubleMeat : false,
+  mustard : false,
+  ketchup : false
 }
 
 const reducer = (state = initialState,action) => {
@@ -31,7 +35,30 @@ const reducer = (state = initialState,action) => {
       ...state,
       cheese : !doesShow
     }}
-
+  if(action.type === "TOGGLE_EXTRA_CHEESE") {
+    const doesShow = state.extraCheese
+    return {
+      ...state,
+      extraCheese : !doesShow
+    }}
+  if(action.type === "TOGGLE_DOUBLE_MEAT") {
+    const doesShow = state.doubleMeat
+    return {
+      ...state,
+      doubleMeat : !doesShow
+    }}
+  if(action.type === "TOGGLE_MUSTARD") {
+    const doesShow = state.mustard
+    return {
+      ...state,
+      mustard : !doesShow
+    }}
+  if(action.type === "TOGGLE_KETCHUP") {
+    const doesShow = state.ketchup
+    return {
+      ...state,
+      ketchup : !doesShow
+    }}
   return state
 }
 
