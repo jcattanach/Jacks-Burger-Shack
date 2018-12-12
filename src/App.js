@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './App.css';
-import Menu from './components/Menu'
 import { Top, Bottom, Patty, Cheese, Lettuce, Tomato, Pickle, Ketchup, Mustard, Bacon } from './components/Burger'
+import Price from './components/Price'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Price/>
         <div className="ingredientMenu">
           <h4><u>Ingredients</u></h4>
           <div>
