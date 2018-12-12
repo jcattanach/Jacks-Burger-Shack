@@ -10,11 +10,44 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: 5px solid black;
-  width: 80%;
+  border: 5px solid orange;
+  /* width: 70%; */
   position: relative;
   height: 80%;
+  padding: 0px 20px 20px 20px;
+  border-radius: 25px;
+  height: 600px;
 }
 .ingredientMenu {
-  margin: 20px 0 20px 0;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.ingredientMenu h4 {
+  margin: 10px;
+}
+
+.ingredientMenu button {
+  background-color: #6ba0f4;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2.5px;
+  border-radius: 5px;
+}
+
+@media (min-width: 320px) and (max-width: 485px) {
+.burgerContainer {
+  height: 350px;
+}
+
+.ingredientMenu button {
+  padding: 10px 24px;
+  font-size: 12px;
+}
 }

@@ -6,7 +6,8 @@ const initialState = {
   extraCheese : false,
   doubleMeat : false,
   mustard : false,
-  ketchup : false
+  ketchup : false,
+  bacon : false
 }
 
 const reducer = (state = initialState,action) => {
@@ -58,6 +59,12 @@ const reducer = (state = initialState,action) => {
     return {
       ...state,
       ketchup : !doesShow
+    }}
+  if(action.type === "TOGGLE_BACON") {
+    const doesShow = state.bacon
+    return {
+      ...state,
+      bacon : !doesShow
     }}
   return state
 }

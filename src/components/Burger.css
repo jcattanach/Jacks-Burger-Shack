@@ -64,10 +64,16 @@
   margin-top: -10px;
   border-radius: 25px;
 }
+.bacon {
+  width: 400px;
+  height: 15px;
+  background-color: #A85352;
+  border-radius: 2.5px;
+}
 
 
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 485px) {
   .bun {
     width: 250px;
     height: 37.5px;
@@ -75,7 +81,7 @@
   }
 
   .patty {
-    width: 200px;
+    width: 220px;
     height: 40px;
     margin: 2.5px;
   }
@@ -109,5 +115,8 @@
     width: 250px;
     height: 10px;
   }
-
+  .bacon {
+    width: 200px;
+    height: 7.5px;
+  }
 }

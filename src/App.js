@@ -2,31 +2,38 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './App.css';
 import Menu from './components/Menu'
-import { Top, Bottom, Patty, Cheese, Lettuce, Tomato, Pickle, Ketchup, Mustard } from './components/Burger'
+import { Top, Bottom, Patty, Cheese, Lettuce, Tomato, Pickle, Ketchup, Mustard, Bacon } from './components/Burger'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Menu />
-        <div className="burgerContainer">
-          <div className="ingredientMenu">
-            <h4>Ingredients</h4>
+        <div className="ingredientMenu">
+          <h4><u>Ingredients</u></h4>
+          <div>
             <button onClick={this.props.toggleLettuce}>Lettuce</button>
             <button onClick={this.props.toggleTomato}>Tomato</button>
             <button onClick={this.props.togglePickles}>Pickles</button>
             <button onClick={this.props.toggleKetchup}>Ketchup</button>
             <button onClick={this.props.toggleMustard}>Mustard</button>
+          </div>
+          <div className="addOnIngredients">
+          <h4><u>Add-Ons</u></h4>
             <button onClick={this.props.toggleCheese}>Cheese $.50</button>
             <button onClick={this.props.toggleExtraCheese}>Extra Cheese $.50</button>
-            <button onClick={this.props.toggleDoubleMeat}>Double Meat - $2</button>
+            <button onClick={this.props.toggleBacon}>Bacon $1</button>
+            <button onClick={this.props.toggleDoubleMeat}>Double Meat $2</button>
           </div>
+        </div>
+        <div className="burgerContainer">
           <Top />
           <Mustard value={this.props.mus}/>
           <Pickle value={this.props.pic}/>
           <Lettuce value={this.props.let}/>
           <Tomato value={this.props.tom}/>
           <Cheese value={this.props.chee} valueTwo={this.props.ext}/>
+          <Bacon value={this.props.bac}/>
           <Patty value={this.props.dub}/>
           <Ketchup value={this.props.ket}/>
           <Bottom/>
@@ -45,7 +52,8 @@ const mapStateToProps = state => {
     dub: state.doubleMeat,
     ext: state.extraCheese,
     ket: state.ketchup,
-    mus: state.mustard
+    mus: state.mustard,
+    bac: state.bacon
   }
 }
 
@@ -59,7 +67,8 @@ const mapDispatchToProps = (dispatch) => {
     toggleExtraCheese : () => dispatch({ type : "TOGGLE_EXTRA_CHEESE"}),
     toggleDoubleMeat : () => dispatch({ type : "TOGGLE_DOUBLE_MEAT"}),
     toggleMustard : () => dispatch({ type : "TOGGLE_MUSTARD"}),
-    toggleKetchup : () => dispatch({ type : "TOGGLE_KETCHUP"})
+    toggleKetchup : () => dispatch({ type : "TOGGLE_KETCHUP"}),
+    toggleBacon : () => dispatch({ type : "TOGGLE_BACON"})
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App)

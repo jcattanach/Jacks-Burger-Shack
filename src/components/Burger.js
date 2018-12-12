@@ -132,3 +132,17 @@ export class Mustard extends Component {
     );
   }
 }
+export class Bacon extends Component {
+  render() {
+    let bacon = null
+    if(this.props.value){
+      bacon = <div className="bacon"></div>
+
+}
+    return (
+      <div>
+        {bacon}
+      </div>
+    );
+  }
+}
