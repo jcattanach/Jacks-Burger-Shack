@@ -32,10 +32,18 @@ const reducer = (state = initialState,action) => {
     }}
   if(action.type === "TOGGLE_CHEESE") {
     const doesShow = state.cheese
+
+    if( state.cheese){
+      return {
+        ...state,
+        extraCheese : false,
+        cheese : !doesShow
+      }
+    } else {
     return {
       ...state,
       cheese : !doesShow
-    }}
+    }}}
   if(action.type === "TOGGLE_EXTRA_CHEESE") {
     const doesShow = state.extraCheese
     return {

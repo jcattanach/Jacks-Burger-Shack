@@ -4,8 +4,17 @@ import './App.css';
 import { Top, Bottom, Patty, Cheese, Lettuce, Tomato, Pickle, Ketchup, Mustard, Bacon } from './components/Burger'
 import Price from './components/Price'
 
+
 class App extends Component {
   render() {
+
+    let extraCheeseButton = null
+    if(this.props.chee){
+      extraCheeseButton = <button onClick={this.props.toggleExtraCheese}>Extra Cheese $.50</button>
+    }
+
+
+
     return (
       <div className="App">
         <Price/>
@@ -21,7 +30,7 @@ class App extends Component {
           <div className="addOnIngredients">
           <h4><u>Add-Ons</u></h4>
             <button onClick={this.props.toggleCheese}>Cheese $.50</button>
-            <button onClick={this.props.toggleExtraCheese}>Extra Cheese $.50</button>
+            {extraCheeseButton}
             <button onClick={this.props.toggleBacon}>Bacon $1</button>
             <button onClick={this.props.toggleDoubleMeat}>Double Meat $2</button>
           </div>
