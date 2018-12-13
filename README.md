@@ -1,3 +1,5 @@
 ## Jack's Burger Shack
 
-This is my React Redux Burger project
+WORK IN PROGRESS
+
+React-Redux app with payment api.
