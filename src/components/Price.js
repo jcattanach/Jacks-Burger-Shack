@@ -17,7 +17,7 @@ class Price extends Component {
       cost += 0.50
     }
 
-let price = <div><h3>Cost </h3><p> ${cost.toFixed(2)} </p></div>
+let price = <div><h3>Cost </h3><p> ${cost.toFixed(2)} </p><button onClick={this.props.buttonAddToCart}>Add To Cart</button></div>
 
     return (
       <div>
@@ -36,4 +36,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Price)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    buttonAddToCart : () => dispatch({ type : "ADD_TO_CART", value : 5})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Price)

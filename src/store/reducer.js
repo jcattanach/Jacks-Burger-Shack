@@ -7,7 +7,9 @@ const initialState = {
   doubleMeat : false,
   mustard : false,
   ketchup : false,
-  bacon : false
+  bacon : false,
+  cartTotal : 0,
+  itemsInCart : 0
 }
 
 const reducer = (state = initialState,action) => {
@@ -74,7 +76,23 @@ const reducer = (state = initialState,action) => {
       ...state,
       bacon : !doesShow
     }}
+  if(action.type === "ADD_TO_CART") {
+    return {
+      ...state,
+      cartTotal : state.cartTotal += action.value,
+      itemsInCart : state.itemsInCart += 1,
+      pickles : false,
+      cheese : false,
+      tomato : false,
+      lettuce : false,
+      extraCheese : false,
+      doubleMeat : false,
+      mustard : false,
+      ketchup : false,
+      bacon : false
+    }}
   return state
+
 }
 
 export default reducer
