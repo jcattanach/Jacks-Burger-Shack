@@ -9,8 +9,11 @@ const initialState = {
   ketchup : false,
   bacon : false,
   cartTotal : 0,
-  itemsInCart : 0
+  itemsInCart : 0,
+  cart: []
 }
+
+let cartList = []
 
 const reducer = (state = initialState,action) => {
 
@@ -77,10 +80,40 @@ const reducer = (state = initialState,action) => {
       bacon : !doesShow
     }}
   if(action.type === "ADD_TO_CART") {
+
+    if(state.pickles){
+      cartList.push('pickles')
+    }
+    if(state.cheese){
+      cartList.push('cheese')
+    }
+    if(state.tomato){
+      cartList.push('tomato')
+    }
+    if(state.lettuce){
+      cartList.push('lettuce')
+    }
+    if(state.extraCheese){
+      cartList.push('extraCheese')
+    }
+    if(state.doubleMeat){
+      cartList.push('doubleMeat')
+    }
+    if(state.mustard){
+      cartList.push('mustard')
+    }
+    if(state.ketchup){
+      cartList.push('ketchup')
+    }
+    if(state.bacon){
+      cartList.push('bacon')
+    }
+
     return {
       ...state,
       cartTotal : state.cartTotal += action.value,
       itemsInCart : state.itemsInCart += 1,
+      cart : cartList,
       pickles : false,
       cheese : false,
       tomato : false,

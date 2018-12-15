@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import './Price.css'
 
 class Price extends Component {
   render() {
@@ -17,7 +18,7 @@ class Price extends Component {
       cost += 0.50
     }
 
-let price = <div><h3>Cost </h3><p> ${cost.toFixed(2)} </p><button onClick={this.props.buttonAddToCart}>Add To Cart</button></div>
+let price = <div className = "priceDiv"><h2>Cost </h2><p> ${cost.toFixed(2)} </p><button onClick={() => this.props.buttonAddToCart(cost)}>Add To Cart</button></div>
 
     return (
       <div>
@@ -38,7 +39,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    buttonAddToCart : () => dispatch({ type : "ADD_TO_CART", value : 5})
+    buttonAddToCart : (cost) => dispatch({ type : "ADD_TO_CART", value : cost})
   }
 }
 
