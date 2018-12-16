@@ -9,6 +9,12 @@ class Checkout extends Component {
       return <li key={index}>{ingredients}</li>
     })
 
+    let x = this.props.crt
+    console.log(x)
+    for(let i = 0; i < x.length; i++){
+      console.log(x[i].items)
+    }
+
     let taxedTotal = this.props.tot * 1.08
 
     return (
@@ -16,7 +22,6 @@ class Checkout extends Component {
         <h1>Checkout</h1>
         <h2> Total = ${taxedTotal.toFixed(2)} (with tax)</h2>
         <h2> Items in Cart = {this.props.item}</h2>
-        <ul>{burgerOrder}</ul>
       </div>
     );
   }

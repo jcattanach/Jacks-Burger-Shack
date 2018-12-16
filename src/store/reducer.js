@@ -81,33 +81,7 @@ const reducer = (state = initialState,action) => {
     }}
   if(action.type === "ADD_TO_CART") {
 
-    if(state.pickles){
-      cartList.push('pickles')
-    }
-    if(state.cheese){
-      cartList.push('cheese')
-    }
-    if(state.tomato){
-      cartList.push('tomato')
-    }
-    if(state.lettuce){
-      cartList.push('lettuce')
-    }
-    if(state.extraCheese){
-      cartList.push('extraCheese')
-    }
-    if(state.doubleMeat){
-      cartList.push('doubleMeat')
-    }
-    if(state.mustard){
-      cartList.push('mustard')
-    }
-    if(state.ketchup){
-      cartList.push('ketchup')
-    }
-    if(state.bacon){
-      cartList.push('bacon')
-    }
+    cartList.push(action.order)
 
     return {
       ...state,
