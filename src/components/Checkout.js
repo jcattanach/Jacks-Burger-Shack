@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './Checkout.css'
+import Stripe from './Stripe'
 
 class Checkout extends Component {
   render() {
 
-    let burgerOrder = this.props.crt.map(function(ingredients,index){
-      return <li key={index}>{ingredients}</li>
+    let burgerOrder = this.props.crt.map((ingredients) => {
+      return ingredients.items.map((item,index) => {
+        return <li key={index}>{item}</li>
+      })
     })
-
-    let x = this.props.crt
-    console.log(x)
-    for(let i = 0; i < x.length; i++){
-      console.log(x[i].items)
-    }
 
     let taxedTotal = this.props.tot * 1.08
 
@@ -22,6 +19,9 @@ class Checkout extends Component {
         <h1>Checkout</h1>
         <h2> Total = ${taxedTotal.toFixed(2)} (with tax)</h2>
         <h2> Items in Cart = {this.props.item}</h2>
+        <Stripe />
+        {burgerOrder}
+
       </div>
     );
   }
