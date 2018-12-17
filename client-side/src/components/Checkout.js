@@ -20,8 +20,10 @@ class Checkout extends Component {
         <h2> Total = ${taxedTotal.toFixed(2)} (with tax)</h2>
         <h2> Items in Cart = {this.props.item}</h2>
         <Stripe />
-        {burgerOrder}
-
+        <div>
+          <h3>Order Info</h3>
+          {burgerOrder}
+        </div>
       </div>
     );
   }
