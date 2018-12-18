@@ -2,7 +2,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const PORT = 3001
-const stripe = require('stripe')('sk_test_jMxrRWBTYFoSSl7K5eSdc561')
+const dotenv = require('dotenv');
+dotenv.load();
+const stripe = require('stripe')(process.env.SECRET_KEY)
 
 app.use(bodyParser.json())
 
