@@ -3,12 +3,16 @@ import StripeCheckout from 'react-stripe-checkout';
 
 class Stripe extends Component {
   onToken = (token) => {
-    fetch('/save-stripe-token', {
+    fetch('http://localhost:3001/save-stripe-token', {
       method: 'POST',
-      body: JSON.stringify(token),
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({ token: token.id, amount: this.props.value}),
     }).then(response => {
+
       response.json().then(data => {
-        alert(`We are in business, ${data.email}`);
+        alert(data.message);
       });
     });
   }
@@ -16,11 +20,14 @@ class Stripe extends Component {
   // ...
 
   render() {
+
     return (
       // ...
       <StripeCheckout
         token={this.onToken}
         stripeKey="pk_test_B941Lk8uujRSJCsGSndEwkBI"
+        amount={this.props.value}
+        currency="USD"
       />
     )
   }

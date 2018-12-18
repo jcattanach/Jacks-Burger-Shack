@@ -13,10 +13,6 @@ class App extends Component {
       extraCheeseButton = <button onClick={this.props.toggleExtraCheese}>Extra Cheese $.50</button>
     }
 
-
-
-
-
     return (
       <div className="App">
         <Price/>

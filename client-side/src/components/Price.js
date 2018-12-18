@@ -5,9 +5,30 @@ import './Price.css'
 class Price extends Component {
   render() {
 
+    let cost = 5.00
+    if(this.props.bac){
+      cost += 1.00
+    }
+    if(this.props.chee){
+      cost += 0.50
+    }
+    if(this.props.dub){
+      cost += 2.00
+    }
+    if(this.props.ext){
+      cost += 0.50
+    }
+
+
+
+    let itemName = `Item ${this.props.ordInd}`
+    let uniqueID = Math.floor(Math.random() * 100000) + 1
+
     const order = {
-      name: 'Order',
-      items: []
+      name: itemName,
+      items: [],
+      price: cost,
+      id: uniqueID
     }
 
     if(this.props.dub){
@@ -38,21 +59,6 @@ class Price extends Component {
       order.items.push('ketchup')
     }
 
-    let cost = 5.00
-    if(this.props.bac){
-      cost += 1.00
-    }
-    if(this.props.chee){
-      cost += 0.50
-    }
-    if(this.props.dub){
-      cost += 2.00
-    }
-    if(this.props.ext){
-      cost += 0.50
-    }
-
-    console.log(order.items)
 
 let price = <div className = "priceDiv"><h2>Cost </h2><p> ${cost.toFixed(2)} </p><button onClick={() => this.props.buttonAddToCart(cost,order)}>Add To Cart</button></div>
 
@@ -74,7 +80,8 @@ const mapStateToProps = (state) => {
     ext: state.extraCheese,
     ket: state.ketchup,
     mus: state.mustard,
-    bac: state.bacon
+    bac: state.bacon,
+    ordInd: state.orderIndex
   }
 }
 

@@ -2,8 +2,24 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const PORT = 3001
+const stripe = require('stripe')('sk_test_jMxrRWBTYFoSSl7K5eSdc561')
+
+app.use(bodyParser.json())
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 
-
+app.post('/save-stripe-token', (req,res) => {
+  const charge = stripe.charges.create({
+           amount: req.body.amount,
+           currency: 'USD',
+           source: req.body.token
+       })
+  res.send(JSON.stringify({message: 'order placed'}))
+})
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`))

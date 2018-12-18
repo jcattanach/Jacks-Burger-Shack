@@ -9,11 +9,20 @@ const initialState = {
   ketchup : false,
   bacon : false,
   cartTotal : 0,
-  itemsInCart : 0,
-  cart: []
+  cart: [],
+  orderIndex: 1
 }
 
 let cartList = []
+
+function arrayRemove(arr, value) {
+
+   return arr.filter(function(ele){
+     if(ele.id != value)
+       return ele;
+   });
+
+}
 
 const reducer = (state = initialState,action) => {
 
@@ -85,8 +94,7 @@ const reducer = (state = initialState,action) => {
 
     return {
       ...state,
-      cartTotal : state.cartTotal += action.value,
-      itemsInCart : state.itemsInCart += 1,
+      cartTotal : state.cartTotal += action.order.price,
       cart : cartList,
       pickles : false,
       cheese : false,
@@ -96,8 +104,18 @@ const reducer = (state = initialState,action) => {
       doubleMeat : false,
       mustard : false,
       ketchup : false,
-      bacon : false
+      bacon : false,
+      orderIndex : state.orderIndex += 1
     }}
+    if(action.type === "REMOVE_FROM_CART") {
+
+      cartList = arrayRemove(cartList, action.value)
+
+      return {
+        ...state,
+        cart: cartList,
+        cartTotal: state.cartTotal - action.price
+      }}
   return state
 
 }

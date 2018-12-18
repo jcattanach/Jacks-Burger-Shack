@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux'
 import './Burger.css'
 
 export class Top extends Component {
@@ -146,17 +145,3 @@ export class Bacon extends Component {
     );
   }
 }
-
-// const mapStateToProps = state => {
-//   return {
-//   let: state.lettuce,
-//   tom: state.tomato,
-//   pic: state.pickles,
-//   chee: state.cheese,
-//   dub: state.doubleMeat,
-//   ext: state.extraCheese,
-//   ket: state.ketchup,
-//   mus: state.mustard,
-//   bac: state.bacon
-// }
-// }
