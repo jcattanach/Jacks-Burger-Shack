@@ -32,7 +32,6 @@ class Stripe extends Component {
       // ...
       <StripeCheckout
         token={this.onToken}
-
         stripeKey="pk_test_B941Lk8uujRSJCsGSndEwkBI"
         amount={this.props.value}
         cart={this.props.valueTwo}

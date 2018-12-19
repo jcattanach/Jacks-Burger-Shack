@@ -10,7 +10,6 @@ dotenv.load();
 const stripe = require('stripe')(process.env.SECRET_KEY)
 const Burger = require('./schemas/BurgerSchema')
 
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
@@ -44,6 +43,8 @@ app.post('/save-stripe-token', (req,res) => {
        newBurger.items = cart
        newBurger.price = price
        newBurger.itemsInOrder = cart.length
+       newBurger.orderMade = false
+       newBurger.orderPickedUp = false
 
        newBurger.save(function(err,burger){
          if(err){
@@ -52,6 +53,35 @@ app.post('/save-stripe-token', (req,res) => {
            res.send(JSON.stringify({message: 'order is placed', email : email}))
          }
        })
+})
+
+app.get('/get-orders',(req,res)=>{
+  Burger.find({},(error,posts) => {
+    res.json(posts)
+  })
+})
+app.get('/get-open-orders',(req,res)=>{
+  Burger.find({orderPickedUp: false},(error,posts) => {
+    res.json(posts)
+  })
+})
+
+app.put('/order-picked-up/:orderID',(req,res) => {
+
+  let orderID = req.params.orderID
+
+  Burger.findByIdAndUpdate(orderID,{orderPickedUp: true},{new: true},(error,updatedOrder) => {
+    res.json(updatedOrder)
+  })
+})
+
+app.put('/order-made/:orderID',(req,res) => {
+
+  let orderID = req.params.orderID
+
+  Burger.findByIdAndUpdate(orderID,{orderMade: true},{new: true},(error,updatedOrder) => {
+    res.json(updatedOrder)
+  })
 })
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`))

@@ -6,7 +6,9 @@ const BurgerSchema = new Schema({
   items: Array,
   date: { type: Date, default: Date.now },
   price: Number,
-  itemsInOrder: Number
+  itemsInOrder: Number,
+  orderMade: Boolean,
+  orderPickedUp: Boolean
 });
 
 const Burger = mongoose.model('Burger', BurgerSchema)
