@@ -1,3 +1,12 @@
 .Home {
   text-align: center;
 }
+
+.bigLogo {
+  width: 50%;
+}
+@media (min-width: 320px) and (max-width: 485px) {
+  .bigLogo {
+    width: 85%;
+  }
+}
