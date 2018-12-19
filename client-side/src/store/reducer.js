@@ -116,6 +116,15 @@ const reducer = (state = initialState,action) => {
         cart: cartList,
         cartTotal: state.cartTotal - action.price
       }}
+    if(action.type === "EMPTY_CART") {
+
+      cartList = []
+
+      return {
+        ...state,
+        cart: cartList,
+        cartTotal: 0
+      }}
   return state
 
 }
