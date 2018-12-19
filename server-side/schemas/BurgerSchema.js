@@ -5,7 +5,8 @@ const BurgerSchema = new Schema({
   email:  String,
   items: Array,
   date: { type: Date, default: Date.now },
-  price: Number
+  price: Number,
+  itemsInOrder: Number
 });
 
 const Burger = mongoose.model('Burger', BurgerSchema)

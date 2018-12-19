@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const PORT = 3001
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/burger');
+mongoose.connect('mongodb://localhost/burger', { useNewUrlParser: true });
 const db = mongoose.connection;
 const dotenv = require('dotenv');
 dotenv.load();
@@ -43,12 +43,13 @@ app.post('/save-stripe-token', (req,res) => {
        newBurger.email = email
        newBurger.items = cart
        newBurger.price = price
+       newBurger.itemsInOrder = cart.length
 
        newBurger.save(function(err,burger){
          if(err){
-           res.send(JSON.stringify({message: 'error saving order', email : email}))
+           res.send(JSON.stringify({message: 'order encountered an ERROR'}))
          }else{
-           res.send(JSON.stringify({message: 'order is placed', email : email, cart: cart}))
+           res.send(JSON.stringify({message: 'order is placed', email : email}))
          }
        })
 })
