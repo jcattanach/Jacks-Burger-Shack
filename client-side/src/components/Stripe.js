@@ -12,7 +12,7 @@ class Stripe extends Component {
     }).then(response => {
 
       response.json().then(data => {
-        alert(`${data.message} for ${data.email}!`);
+        alert(`Your ${data.message} for ${data.email}!`);
       });
     });
   }

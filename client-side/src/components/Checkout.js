@@ -16,13 +16,14 @@ class Checkout extends Component {
     let cents = taxedTotal * 100
 
     return (
+      <div>
       <div className="Checkout">
         <h1>Checkout</h1>
         <h2> Total = ${taxedTotal.toFixed(2)} (with tax)</h2>
         <h2> Items in Cart = {this.props.crt.length}</h2>
         <Stripe value={cents} valueTwo={this.props.crt}/>
+      </div>
         <div>
-          <h3>Order Info</h3>
           <Order />
         </div>
       </div>

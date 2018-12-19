@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import './Order.css'
 
 class Order extends Component {
   render() {
 
     let burgerOrder = this.props.crt.map((order, index) => {
 
-      let result = <div><h4>{order.name}</h4></div>
+      let result = <div><h4>{order.name} - ${order.price.toFixed(2)}</h4></div>
       let items = order.items.map((item, index) => {
         return <li key={index + 100}>{item}</li>
       })
@@ -23,6 +24,7 @@ class Order extends Component {
 
     return (
       <div className="Order">
+        <h2>Order Info</h2>
         {burgerOrder}
       </div>
     );

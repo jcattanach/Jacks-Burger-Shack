@@ -21,7 +21,7 @@ class Price extends Component {
 
 
 
-    let itemName = `Item ${this.props.ordInd}`
+    let itemName = `Burger ${this.props.ordInd}`
     let uniqueID = Math.floor(Math.random() * 100000) + 1
 
     const order = {
