@@ -21,7 +21,9 @@ app.post('/save-stripe-token', (req,res) => {
            currency: 'USD',
            source: req.body.token
        })
-  res.send(JSON.stringify({message: 'order placed'}))
+       let email = req.body.email
+       let cart = req.body.cart
+  res.send(JSON.stringify({message: 'order placed', email : email}))
 })
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`))

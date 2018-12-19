@@ -8,11 +8,11 @@ class Stripe extends Component {
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({ token: token.id, amount: this.props.value}),
+      body: JSON.stringify({ token: token.id, amount: this.props.value, cart: this.props.valueTwo, email: token.email}),
     }).then(response => {
 
       response.json().then(data => {
-        alert(data.message);
+        alert(`${data.message} for ${data.email}!`);
       });
     });
   }
@@ -25,8 +25,10 @@ class Stripe extends Component {
       // ...
       <StripeCheckout
         token={this.onToken}
+
         stripeKey="pk_test_B941Lk8uujRSJCsGSndEwkBI"
         amount={this.props.value}
+        cart={this.props.valueTwo}
         currency="USD"
       />
     )
