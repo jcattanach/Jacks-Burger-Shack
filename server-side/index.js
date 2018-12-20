@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 const mongoose = require('mongoose');
 const mongodbURL = 'mongodb://appuser:nodepassword1@ds139934.mlab.com:39934/burger-app'
 mongoose.connect(mongodbURL, { useNewUrlParser: true });
