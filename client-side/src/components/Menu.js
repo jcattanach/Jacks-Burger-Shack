@@ -13,7 +13,7 @@ class Menu extends Component {
             <div className="Menu2">
               <img className="logo" src={require('./imgs/logo-2.png')} />
                 <div class="dropdown">
-                  <button class="dropbtn">Menu</button>
+                  <button class="dropbtn" onSelect={() => null}>Menu</button>
                   <div class="dropdown-content">
                     <Link to = "/">Home</Link>
                     <Link to = "/build-burger">Build your Burger</Link>
