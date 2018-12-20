@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const PORT = 3001
+const PORT = 8080
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/burger', { useNewUrlParser: true });
 const db = mongoose.connection;
@@ -9,6 +9,7 @@ const dotenv = require('dotenv');
 dotenv.load();
 const stripe = require('stripe')(process.env.SECRET_KEY)
 const Burger = require('./schemas/BurgerSchema')
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -50,7 +51,7 @@ app.post('/save-stripe-token', (req,res) => {
          if(err){
            res.send(JSON.stringify({message: 'order encountered an ERROR'}))
          }else{
-           res.send(JSON.stringify({message: 'order is placed', email : email}))
+           res.send(JSON.stringify({message: 'order is placed', email: email}))
          }
        })
 })
@@ -61,7 +62,7 @@ app.get('/get-orders',(req,res)=>{
   })
 })
 app.get('/get-open-orders',(req,res)=>{
-  Burger.find({orderPickedUp: false},(error,posts) => {
+  Burger.find({orderMade: true},(error,posts) => {
     res.json(posts)
   })
 })

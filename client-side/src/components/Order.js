@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import './Order.css'
 
 class Order extends Component {
   render() {
@@ -15,16 +14,16 @@ class Order extends Component {
 
       return <li key={index}>
         {result}
-        <ul>
+        <ul className="indivOrder">
         {items}
-        </ul>
-        <button onClick={() => this.props.buttonDeleteItem(order.id, order.price)}>Remove Item</button>
+      </ul>
+        <button className="removeButton" onClick={() => this.props.buttonDeleteItem(order.id, order.price)}>Remove Item</button>
       </li>
     })
 
     return (
       <div className="Order">
-        <h2>Order Info</h2>
+        <h2><u>Order Info</u></h2>
         {burgerOrder}
       </div>
     );

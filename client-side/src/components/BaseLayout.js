@@ -5,7 +5,7 @@ export class BaseLayout extends Component {
 
   render() {
     return (
-      <div>
+      <div class="BorderOrange">
         <Menu />
         {this.props.children}
       </div>

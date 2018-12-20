@@ -1,10 +1,45 @@
 .Checkout {
   text-align: center;
-  border: 5px solid orange;
   padding: 0px 20px 20px 20px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
   margin-top: -2px;
 
   /* margin-top: 20px; */
+}
+.Order {
+  text-align: center;
+  padding: 0px 20px 20px 20px;
+  margin-top: 5px;
+  color: black;
+}
+.Order li{
+  list-style: none;
+}
+.Order h4 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.removeButton {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 7px 21px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.indivOrder {
+  color: black;
+}
+
+@media (min-width: 320px) and (max-width: 485px) {
+
+.removeButton {
+  font-size: 14px;
+  padding: 8px 20px;
+}
 }

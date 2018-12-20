@@ -1,5 +1,10 @@
 .Home {
   text-align: center;
+
+  padding: 0px;
+
+  margin-top: -2px;
+  height: 100%;
 }
 
 .bigLogo {
@@ -10,3 +15,4 @@
     width: 85%;
   }
 }
+/* #6ba0f4 */

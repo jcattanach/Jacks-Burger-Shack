@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <h1>Welcome to Jack's Burger Shack!</h1>
+        <h1><i><u>Welcome to Jack's Burger Shack!</u></i></h1>
         <p>12345 Not Real St, FakePlace, USA, 55555</p>
         <p>555-555-1234</p>
         <img className="bigLogo" src={require('./imgs/logo-big.png')} />
