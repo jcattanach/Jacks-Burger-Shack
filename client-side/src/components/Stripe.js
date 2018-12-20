@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 class Stripe extends Component {
   onToken = (token) => {
-    fetch('http://jacks-burger-shack-server.herokuapp.com/save-stripe-token', {
+    fetch('https://jacks-burger-shack-server.herokuapp.com/save-stripe-token', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
