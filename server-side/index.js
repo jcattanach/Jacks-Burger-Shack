@@ -3,7 +3,8 @@ const bodyParser = require('body-parser')
 const app = express()
 const PORT = 8080
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/burger', { useNewUrlParser: true });
+const mongodbURL = 'mongodb://appuser:nodepassword1@ds139934.mlab.com:39934/burger-app'
+mongoose.connect(mongodbURL, { useNewUrlParser: true });
 const db = mongoose.connection;
 const dotenv = require('dotenv');
 dotenv.load();
