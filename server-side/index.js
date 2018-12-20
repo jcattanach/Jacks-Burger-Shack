@@ -86,4 +86,8 @@ app.put('/order-made/:orderID',(req,res) => {
   })
 })
 
+app.get('*', (req,res)=>{
+  res.send('!!')
+})
+
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`))
