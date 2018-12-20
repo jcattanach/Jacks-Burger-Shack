@@ -6,7 +6,6 @@ const mongodbURL = 'mongodb://appuser:nodepassword1@ds139934.mlab.com:39934/burg
 mongoose.connect(mongodbURL, { useNewUrlParser: true });
 const db = mongoose.connection;
 const dotenv = require('dotenv').config();
-dotenv.load();
 const PORT = process.env.PORT || 8080
 const stripe = require('stripe')(process.env.SECRET_KEY)
 const Burger = require('./schemas/BurgerSchema')
