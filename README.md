@@ -17,12 +17,14 @@ The front end of this project was built with React and Redux. It incorporates th
 #### Back End
 The back end of this project was built with Node.js Express, and MongoDb (through mLab). 
 
-##### Run on your machie locally
+#### Run on your machie locally
 To run this project on your local machine you will need to...
 1. Download or clone the files
 2. Enter the client-side folder and run *npm intsall* your terminal
 3. Do the same in the server-side folder
 4. run *npm start* in both folders concurrently.
 
-The react project should run on your local host 3000, and the node server should run on local host 8080
+*The react project should run on your local host 3000, and the node server should run on local host 8080.*
+
+
 *note you will not have access to the Stripe Api unless you create a Stripe account and change your keys in the Stripe.js(client-side) and index.js (server-side)*
