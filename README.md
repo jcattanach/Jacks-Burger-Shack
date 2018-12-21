@@ -1,5 +1,5 @@
 # Jack's Burger Shack
-======================
+
 https://jacks-burger-shack.herokuapp.com/
 
 This is my full-stack burger order project. This app uses React and Redux on the client side and Node.js, MongoDb (with MongooseJS), and Express on the server side, along with the Stripe payment API.
