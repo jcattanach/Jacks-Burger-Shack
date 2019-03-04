@@ -17,7 +17,7 @@ The front end of this project was built with React and Redux. It incorporates th
 #### Back End
 The back end of this project was built with Node.js Express, and MongoDb (through mLab). 
 
-#### Run on your machie locally
+#### Run on your machine locally
 To run this project on your local machine you will need to...
 1. Download or clone the files
 2. Enter the client-side folder and run *npm intsall* your terminal
