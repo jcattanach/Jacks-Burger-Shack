@@ -75,7 +75,7 @@ const mapDispatchToProps = (dispatch) => {
     toggleDoubleMeat : () => dispatch({ type : "TOGGLE_DOUBLE_MEAT"}),
     toggleMustard : () => dispatch({ type : "TOGGLE_MUSTARD"}),
     toggleKetchup : () => dispatch({ type : "TOGGLE_KETCHUP"}),
-    toggleBacon : () => dispatch({ type : "TOGGLE_BACON"})
+    toggleBacon : () => dispatch({ type : "TOGGLE_BACON"}) //test
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App)
